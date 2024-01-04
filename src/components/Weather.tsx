@@ -15,7 +15,9 @@ const Weather = (props: Props) => {
 
     const [temp, setTemp] = useState<number | null>(null)
 
-    let [datesTemps, setDatesTemps] = useState<{date: string, temp: number, minTemp: number, maxTemp: number}[]>([])
+    let [datesTemps, setDatesTemps] = useState<{date: string, temp: number, minTemp: number, maxTemp: number}[]>([]) 
+
+    setDatesTemps([])
 
     const [errorRes, setErrorRes] = useState(false)
 
