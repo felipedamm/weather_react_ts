@@ -1,0 +1,49 @@
+.dates-container {
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2rem;
+    flex-wrap: wrap;
+    max-width: 600px;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.weather-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather-container h1,
+.weather-container h2,
+.weather-container h3 {
+    border-bottom: 1px solid #c4c4c4;
+    margin-bottom: 0;
+}
+
+
+
+.date-temp {
+    border: 1px solid #FFF;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.dates-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.date-temp-date {
+    border: 1px solid #c4c4c4;
+    padding: .2rem .4rem;
+    border-radius: 5px;
+}
+
+.back-btn {
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
