@@ -46,9 +46,11 @@ const Weather = (props: Props) => {
             if (datesTemps.length === 0) {
                 //console.log({date: props.dates[0], temp: data.forecast.forecastday[0].day.maxtemp_c, minTemp: data.forecast.forecastday[0].day.mintemp_c, maxTemp: data.forecast.forecastday[0].day.maxtemp_c})
                 for (let i = 0; i < props.dates.length; i++) {
+                    //console.log(datesTemps)   
                     datesTemps.push({date: props.dates[i], temp: data.current.temp_c, minTemp: data.forecast.forecastday[i].day.mintemp_c, maxTemp: data.forecast.forecastday[i].day.maxtemp_c})
                     //console.log(datesTemps)
-                }        
+                }     
+                
             } 
 
 

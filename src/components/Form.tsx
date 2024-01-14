@@ -30,7 +30,7 @@ const Form = (props: FormProps) => {
     let todayString:string = yyyy.toString() + '-' + mmString + '-' + ddString;
 
     const maxDate = new Date()
-    maxDate.setDate(maxDate.getDate() + 10)
+    maxDate.setDate(maxDate.getDate() + 2)
     const [maxDateFormatted] = maxDate.toISOString().split('T');
 
     const handleSubmit = (e: FormEvent) => {
@@ -82,7 +82,7 @@ const Form = (props: FormProps) => {
                 </label>
                 <label>
                     <p>Até qual dia você deseja as informações?</p>
-                    <input type="date" onChange={handleSecondDate} className="input" max={maxDateFormatted} required/>
+                    <input type="date" onChange={handleSecondDate} className="input" min={todayString} max={maxDateFormatted} required/>
                 </label>
                 
                 {props.city === "" && <button type="submit">Procurar</button>}
