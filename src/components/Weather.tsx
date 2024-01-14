@@ -17,7 +17,10 @@ const Weather = (props: Props) => {
 
     let [datesTemps, setDatesTemps] = useState<{date: string, temp: number, minTemp: number, maxTemp: number}[]>([]) 
 
-    if (datesTemps.length > 0) setDatesTemps([])
+    if (datesTemps.length === 0) {
+        () => setDatesTemps([])
+    }
+    //setDatesTemps([])
     
     const [errorRes, setErrorRes] = useState(false)
 
@@ -38,13 +41,16 @@ const Weather = (props: Props) => {
 
             const data = await res.json()
             setTemp(data.current.temp_c) 
-            console.log(data)
+            //console.log(data)
              
             if (datesTemps.length === 0) {
-                for (let i= 0; i < props.dates.length; i++) {
-                    datesTemps.push({date: props.dates[i], temp: data.forecast.forecastday[i].day.maxtemp_c, minTemp: data.forecast.forecastday[i].day.mintemp_c, maxTemp: data.forecast.forecastday[i].day.maxtemp_c})
+                //console.log({date: props.dates[0], temp: data.forecast.forecastday[0].day.maxtemp_c, minTemp: data.forecast.forecastday[0].day.mintemp_c, maxTemp: data.forecast.forecastday[0].day.maxtemp_c})
+                for (let i = 0; i < props.dates.length; i++) {
+                    datesTemps.push({date: props.dates[i], temp: data.current.temp_c, minTemp: data.forecast.forecastday[i].day.mintemp_c, maxTemp: data.forecast.forecastday[i].day.maxtemp_c})
+                    //console.log(datesTemps)
                 }        
             } 
+
 
         }
 
@@ -55,7 +61,7 @@ const Weather = (props: Props) => {
     const reset = () => {
 
         datesTemps = []
-        console.log(datesTemps)  
+        //console.log(datesTemps)  
         props.setCity("")
         setErrorRes(false)
         props.setResetOn(true)
